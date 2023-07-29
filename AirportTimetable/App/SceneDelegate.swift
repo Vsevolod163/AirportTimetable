@@ -12,7 +12,25 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let tabBarController = UITabBarController()
+        let navigationDepartureVC = UINavigationController.init(rootViewController: DepartureViewController())
+        let navigationArrivalVC = UINavigationController.init(rootViewController: ArrivalViewController())
+        
+        tabBarController.overrideUserInterfaceStyle = .light
+        tabBarController.tabBar.backgroundColor = .systemGray6
+        
+        navigationDepartureVC.title = "Departure"
+        navigationDepartureVC.navigationBar.prefersLargeTitles = true
+        navigationArrivalVC.title = "Arrival"
+        navigationArrivalVC.navigationBar.prefersLargeTitles = true
+    
+        tabBarController.viewControllers = [navigationDepartureVC, navigationArrivalVC]
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = tabBarController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
