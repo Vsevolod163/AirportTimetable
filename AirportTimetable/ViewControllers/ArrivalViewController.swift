@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArrivalViewController.swift
 //  AirportTimetable
 //
 //  Created by Vsevolod Lashin on 29.07.2023.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ArrivalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
-
-
 }
-
