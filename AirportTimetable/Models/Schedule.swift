@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+struct Schedule {
+    let schedule: [Information]
+}
+
+struct Information {
+    let thread: Thread
+    let departure: String
+    let arrival: String
+}
+
+struct Thread {
+    let number: String
+    let title: String
+    let vehicle: String
+}
