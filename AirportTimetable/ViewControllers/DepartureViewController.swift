@@ -25,12 +25,18 @@ final class DepartureViewController: UIViewController {
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
+        label.text = "First"
+        label.textAlignment = .center
+        label.numberOfLines = 0
         
         return label
     }()
     
     private lazy var urlLabel: UILabel = {
         let label = UILabel()
+        label.text = "Second"
+        label.textAlignment = .center
+        label.numberOfLines = 0
         
         return label
     }()
@@ -51,13 +57,24 @@ final class DepartureViewController: UIViewController {
     
     private func setConstraints() {
         copyrightView.translatesAutoresizingMaskIntoConstraints = false
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        urlLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate(
             [
                 copyrightView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
                 copyrightView.heightAnchor.constraint(equalToConstant: 100),
                 copyrightView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-                copyrightView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+                copyrightView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+                
+                infoLabel.topAnchor.constraint(equalTo: copyrightView.topAnchor, constant: 8),
+                infoLabel.leadingAnchor.constraint(equalTo: copyrightView.leadingAnchor, constant: 8),
+                infoLabel.trailingAnchor.constraint(equalTo: copyrightView.trailingAnchor, constant: -8),
+                
+                urlLabel.bottomAnchor.constraint(equalTo: copyrightView.bottomAnchor, constant: -8),
+                urlLabel.leadingAnchor.constraint(equalTo: copyrightView.leadingAnchor, constant: 8),
+                urlLabel.trailingAnchor.constraint(equalTo: copyrightView.trailingAnchor, constant: -8)
             ]
         )
     }
