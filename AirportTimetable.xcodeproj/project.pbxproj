@@ -16,6 +16,7 @@
 		C637FF392A752A350036D94C /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF382A752A350036D94C /* FlightTableViewCell.swift */; };
 		C637FF3B2A752A730036D94C /* Copyright.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF3A2A752A730036D94C /* Copyright.swift */; };
 		C637FF3D2A752ABC0036D94C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF3C2A752ABC0036D94C /* Schedule.swift */; };
+		C637FF3F2A752B080036D94C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF3E2A752B080036D94C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C637FF382A752A350036D94C /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		C637FF3A2A752A730036D94C /* Copyright.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyright.swift; sourceTree = "<group>"; };
 		C637FF3C2A752ABC0036D94C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		C637FF3E2A752B080036D94C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		C637FF312A7528170036D94C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C637FF3E2A752B080036D94C /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				C637FF3B2A752A730036D94C /* Copyright.swift in Sources */,
 				C637FF1A2A75272D0036D94C /* AppDelegate.swift in Sources */,
 				C637FF372A7529C00036D94C /* ArrivalViewController.swift in Sources */,
+				C637FF3F2A752B080036D94C /* NetworkManager.swift in Sources */,
 				C637FF1C2A75272D0036D94C /* SceneDelegate.swift in Sources */,
 				C637FF3D2A752ABC0036D94C /* Schedule.swift in Sources */,
 				C637FF392A752A350036D94C /* FlightTableViewCell.swift in Sources */,
