@@ -15,6 +15,15 @@ final class DepartureViewController: UIViewController {
         return tableView
     }()
     
+    private lazy var copyrightView: UIView = {
+        let view = UIView()
+        
+        return view
+    }()
+    
+ 
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
