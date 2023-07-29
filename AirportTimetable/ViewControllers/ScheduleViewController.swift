@@ -27,7 +27,6 @@ final class ScheduleViewController: UIViewController {
     
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "First"
         label.textAlignment = .center
         label.numberOfLines = 0
         
@@ -36,7 +35,6 @@ final class ScheduleViewController: UIViewController {
     
     private lazy var urlLabel: UILabel = {
         let label = UILabel()
-        label.text = "Second"
         label.textAlignment = .center
         label.numberOfLines = 0
         
@@ -51,25 +49,43 @@ final class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         setupSubviews(scheduleTableView, copyrightView, infoLabel, urlLabel)
         setConstraints()
+        
         scheduleTableView.dataSource = self
         scheduleTableView.register(FlightTableViewCell.self, forCellReuseIdentifier: cellID)
         
-        fetch()
-        print(webURL ?? "1")
+        fetchSchedule()
+        fetchCopyright()
     }
     
-    private func fetch() {
+    private func fetchSchedule() {
         guard let url = URL(string: webURL) else { return }
         
         networkManager.fetch(Schedule.self, from: url) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.schedule = data.schedule
-                DispatchQueue.main.async {
-                    self?.scheduleTableView.reloadData()
-                }
+                self?.scheduleTableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchCopyright() {
+        guard let url = URL(
+            string: "https://api.rasp.yandex.net/v3.0/copyright/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&format=json"
+        ) else {
+            return
+        }
+        
+        networkManager.fetch(Copyright.self, from: url) { [weak self] result in
+            switch result {
+            case .success(let copyright):
+                self?.infoLabel.text = copyright.copyright.text
+                self?.urlLabel.text = copyright.copyright.url
             case .failure(let error):
                 print(error)
             }
