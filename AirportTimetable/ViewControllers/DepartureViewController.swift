@@ -26,7 +26,12 @@ final class DepartureViewController: UIViewController {
         
         return label
     }()
- 
+    
+    private lazy var urlLabel: UILabel = {
+        let label = UILabel()
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
