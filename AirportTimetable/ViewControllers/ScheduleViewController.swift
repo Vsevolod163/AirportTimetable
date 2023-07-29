@@ -9,6 +9,8 @@ import UIKit
 
 final class ScheduleViewController: UIViewController {
 
+    var webURL: String!
+    
     private lazy var scheduleTableView: UITableView = {
         let tableView = UITableView()
         
@@ -41,9 +43,10 @@ final class ScheduleViewController: UIViewController {
         return label
     }()
     
-    var webURL: String!
+    private var schedule: [ScheduleInformation] = []
     
     private let cellID = "flight"
+    private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +55,25 @@ final class ScheduleViewController: UIViewController {
         setConstraints()
         scheduleTableView.dataSource = self
         scheduleTableView.register(FlightTableViewCell.self, forCellReuseIdentifier: cellID)
-       
+        
+        fetch()
         print(webURL ?? "1")
+    }
+    
+    private func fetch() {
+        guard let url = URL(string: webURL) else { return }
+        
+        networkManager.fetch(Schedule.self, from: url) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.schedule = data.schedule
+                DispatchQueue.main.async {
+                    self?.scheduleTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -95,15 +115,17 @@ final class ScheduleViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ScheduleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        100
+        schedule.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = scheduleTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         guard let cell = cell as? FlightTableViewCell else { return UITableViewCell() }
         
+        let schedule = schedule[indexPath.row]
+        
         cell.selectionStyle = .none
-        cell.configure()
+        cell.configure(with: schedule)
         
         return cell
     }
