@@ -15,15 +15,24 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let tabBarController = UITabBarController()
-        let navigationDepartureVC = UINavigationController.init(rootViewController: DepartureViewController())
-        let navigationArrivalVC = UINavigationController.init(rootViewController: ArrivalViewController())
+        let departureVC = ScheduleViewController()
+        let arrivalVC = ScheduleViewController()
+        
+        departureVC.webUrl = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=departure"
+        arrivalVC.webUrl = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=arrival"
+        
+        let navigationDepartureVC = UINavigationController.init(rootViewController: departureVC)
+        let navigationArrivalVC = UINavigationController.init(rootViewController: arrivalVC)
         
         tabBarController.overrideUserInterfaceStyle = .light
         tabBarController.tabBar.backgroundColor = .systemGray6
         
         navigationDepartureVC.title = "Departure"
+        navigationDepartureVC.topViewController?.title = "Departure"
         navigationDepartureVC.navigationBar.prefersLargeTitles = true
+        
         navigationArrivalVC.title = "Arrival"
+        navigationArrivalVC.topViewController?.title = "Arrival"
         navigationArrivalVC.navigationBar.prefersLargeTitles = true
     
         tabBarController.viewControllers = [navigationDepartureVC, navigationArrivalVC]
