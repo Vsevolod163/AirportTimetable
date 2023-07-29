@@ -11,8 +11,7 @@
 		C637FF1C2A75272D0036D94C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF1B2A75272D0036D94C /* SceneDelegate.swift */; };
 		C637FF232A75272E0036D94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C637FF222A75272E0036D94C /* Assets.xcassets */; };
 		C637FF262A75272E0036D94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C637FF242A75272E0036D94C /* LaunchScreen.storyboard */; };
-		C637FF352A7529AB0036D94C /* DepartureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF342A7529AB0036D94C /* DepartureViewController.swift */; };
-		C637FF372A7529C00036D94C /* ArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF362A7529C00036D94C /* ArrivalViewController.swift */; };
+		C637FF352A7529AB0036D94C /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF342A7529AB0036D94C /* ScheduleViewController.swift */; };
 		C637FF392A752A350036D94C /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF382A752A350036D94C /* FlightTableViewCell.swift */; };
 		C637FF3B2A752A730036D94C /* Copyright.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF3A2A752A730036D94C /* Copyright.swift */; };
 		C637FF3D2A752ABC0036D94C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF3C2A752ABC0036D94C /* Schedule.swift */; };
@@ -26,8 +25,7 @@
 		C637FF222A75272E0036D94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C637FF252A75272E0036D94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C637FF272A75272E0036D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C637FF342A7529AB0036D94C /* DepartureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewController.swift; sourceTree = "<group>"; };
-		C637FF362A7529C00036D94C /* ArrivalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalViewController.swift; sourceTree = "<group>"; };
+		C637FF342A7529AB0036D94C /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		C637FF382A752A350036D94C /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		C637FF3A2A752A730036D94C /* Copyright.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyright.swift; sourceTree = "<group>"; };
 		C637FF3C2A752ABC0036D94C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -95,8 +93,7 @@
 		C637FF2F2A7527CC0036D94C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C637FF342A7529AB0036D94C /* DepartureViewController.swift */,
-				C637FF362A7529C00036D94C /* ArrivalViewController.swift */,
+				C637FF342A7529AB0036D94C /* ScheduleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,10 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C637FF352A7529AB0036D94C /* DepartureViewController.swift in Sources */,
+				C637FF352A7529AB0036D94C /* ScheduleViewController.swift in Sources */,
 				C637FF3B2A752A730036D94C /* Copyright.swift in Sources */,
 				C637FF1A2A75272D0036D94C /* AppDelegate.swift in Sources */,
-				C637FF372A7529C00036D94C /* ArrivalViewController.swift in Sources */,
 				C637FF3F2A752B080036D94C /* NetworkManager.swift in Sources */,
 				C637FF1C2A75272D0036D94C /* SceneDelegate.swift in Sources */,
 				C637FF3D2A752ABC0036D94C /* Schedule.swift in Sources */,

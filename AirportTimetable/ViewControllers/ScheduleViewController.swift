@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DepartureViewController: UIViewController {
+final class ScheduleViewController: UIViewController {
 
     private lazy var departureTableView: UITableView = {
         let tableView = UITableView()
@@ -41,12 +41,14 @@ final class DepartureViewController: UIViewController {
         return label
     }()
     
+    var webUrl: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Departure"
         setupSubviews(departureTableView, copyrightView, infoLabel, urlLabel)
         setConstraints()
+        print(webUrl ?? "1")
     }
     
     private func setupSubviews(_ subviews: UIView...) {
