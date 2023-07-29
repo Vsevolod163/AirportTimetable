@@ -17,6 +17,8 @@ final class DepartureViewController: UIViewController {
     
     private lazy var copyrightView: UIView = {
         let view = UIView()
+        view.backgroundColor = .yellow
+        view.layer.cornerRadius = 10
         
         return view
     }()
@@ -37,6 +39,8 @@ final class DepartureViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Departure"
+        setupSubviews(departureTableView, copyrightView, infoLabel, urlLabel)
+        setConstraints()
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -45,4 +49,16 @@ final class DepartureViewController: UIViewController {
         }
     }
     
+    private func setConstraints() {
+        copyrightView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate(
+            [
+                copyrightView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+                copyrightView.heightAnchor.constraint(equalToConstant: 100),
+                copyrightView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+                copyrightView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            ]
+        )
+    }
 }
