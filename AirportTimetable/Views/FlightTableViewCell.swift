@@ -17,6 +17,7 @@ final class FlightTableViewCell: UITableViewCell {
     
     private lazy var flightNameLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         
         return label
     }()
@@ -43,11 +44,11 @@ final class FlightTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure() {
-        flightNumberLabel.text = "12345"
-        flightNameLabel.text = "Москва - Самара"
-        planeNameLabel.text = "Very good plane"
-        timeLabel.text = "01:55"
+    func configure(with schedule: ScheduleInformation) {
+        flightNumberLabel.text = schedule.thread.number
+        flightNameLabel.text = schedule.thread.title
+        planeNameLabel.text = schedule.thread.vehicle != nil ? schedule.thread.vehicle : "No information"
+        timeLabel.text = schedule.arrival != nil ? schedule.arrival : schedule.departure
     }
     
     private func setupSubviews(_ subviews: UIView...) {
@@ -70,7 +71,7 @@ final class FlightTableViewCell: UITableViewCell {
                 
                 flightNameLabel.topAnchor.constraint(equalTo: flightNumberLabel.bottomAnchor, constant: 8),
                 flightNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-                flightNameLabel.widthAnchor.constraint(equalToConstant: 200),
+                flightNameLabel.widthAnchor.constraint(equalToConstant: 300),
                 
                 planeNameLabel.topAnchor.constraint(equalTo: flightNameLabel.bottomAnchor, constant: 8),
                 planeNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
