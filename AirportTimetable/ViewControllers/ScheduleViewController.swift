@@ -43,11 +43,16 @@ final class ScheduleViewController: UIViewController {
     
     var webURL: String!
     
+    private let cellID = "flight"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSubviews(scheduleTableView, copyrightView, infoLabel, urlLabel)
         setConstraints()
+        scheduleTableView.dataSource = self
+        scheduleTableView.register(FlightTableViewCell.self, forCellReuseIdentifier: cellID)
+       
         print(webURL ?? "1")
     }
     
@@ -80,9 +85,28 @@ final class ScheduleViewController: UIViewController {
                 
                 scheduleTableView.topAnchor.constraint(equalTo: view.topAnchor),
                 scheduleTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                scheduleTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                scheduleTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+                scheduleTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                scheduleTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ]
         )
     }
+}
+
+// MARK: - UITableViewDataSource
+extension ScheduleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        100
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = scheduleTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        guard let cell = cell as? FlightTableViewCell else { return UITableViewCell() }
+        
+        cell.selectionStyle = .none
+        cell.configure()
+        
+        return cell
+    }
+    
+    
 }
