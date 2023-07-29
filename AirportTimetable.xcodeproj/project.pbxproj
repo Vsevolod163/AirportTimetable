@@ -13,6 +13,7 @@
 		C637FF262A75272E0036D94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C637FF242A75272E0036D94C /* LaunchScreen.storyboard */; };
 		C637FF352A7529AB0036D94C /* DepartureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF342A7529AB0036D94C /* DepartureViewController.swift */; };
 		C637FF372A7529C00036D94C /* ArrivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF362A7529C00036D94C /* ArrivalViewController.swift */; };
+		C637FF392A752A350036D94C /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C637FF382A752A350036D94C /* FlightTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C637FF272A75272E0036D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C637FF342A7529AB0036D94C /* DepartureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureViewController.swift; sourceTree = "<group>"; };
 		C637FF362A7529C00036D94C /* ArrivalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalViewController.swift; sourceTree = "<group>"; };
+		C637FF382A752A350036D94C /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		C637FF2D2A7527BE0036D94C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C637FF382A752A350036D94C /* FlightTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				C637FF1A2A75272D0036D94C /* AppDelegate.swift in Sources */,
 				C637FF372A7529C00036D94C /* ArrivalViewController.swift in Sources */,
 				C637FF1C2A75272D0036D94C /* SceneDelegate.swift in Sources */,
+				C637FF392A752A350036D94C /* FlightTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
