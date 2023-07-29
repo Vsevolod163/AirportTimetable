@@ -9,7 +9,7 @@ import UIKit
 
 final class ScheduleViewController: UIViewController {
 
-    private lazy var departureTableView: UITableView = {
+    private lazy var scheduleTableView: UITableView = {
         let tableView = UITableView()
         
         return tableView
@@ -46,7 +46,7 @@ final class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupSubviews(departureTableView, copyrightView, infoLabel, urlLabel)
+        setupSubviews(scheduleTableView, copyrightView, infoLabel, urlLabel)
         setConstraints()
         print(webURL ?? "1")
     }
@@ -61,7 +61,7 @@ final class ScheduleViewController: UIViewController {
         copyrightView.translatesAutoresizingMaskIntoConstraints = false
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         urlLabel.translatesAutoresizingMaskIntoConstraints = false
-        
+        scheduleTableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate(
             [
@@ -76,7 +76,12 @@ final class ScheduleViewController: UIViewController {
                 
                 urlLabel.bottomAnchor.constraint(equalTo: copyrightView.bottomAnchor, constant: -8),
                 urlLabel.leadingAnchor.constraint(equalTo: copyrightView.leadingAnchor, constant: 8),
-                urlLabel.trailingAnchor.constraint(equalTo: copyrightView.trailingAnchor, constant: -8)
+                urlLabel.trailingAnchor.constraint(equalTo: copyrightView.trailingAnchor, constant: -8),
+                
+                scheduleTableView.topAnchor.constraint(equalTo: view.topAnchor),
+                scheduleTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                scheduleTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                scheduleTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
             ]
         )
     }
