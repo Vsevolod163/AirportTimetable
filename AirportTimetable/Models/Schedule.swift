@@ -13,12 +13,12 @@ struct Schedule: Decodable {
 
 struct ScheduleInformation: Decodable {
     let thread: Thread
-    let departure: String
-    let arrival: String
+    let departure: String?
+    let arrival: String?
 }
 
 struct Thread: Decodable {
     let number: String
     let title: String
-    let vehicle: String
+    let vehicle: String?
 }
