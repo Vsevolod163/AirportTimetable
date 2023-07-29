@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Copyright {
+struct Copyright: Decodable {
     let copyright: CopyrightInformation
 }
 
-struct CopyrightInformation {
+struct CopyrightInformation: Decodable {
     let text: String
     let url: String
 }
