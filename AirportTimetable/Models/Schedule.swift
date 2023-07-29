@@ -8,10 +8,10 @@
 import Foundation
 
 struct Schedule {
-    let schedule: [Information]
+    let schedule: [ScheduleInformation]
 }
 
-struct Information {
+struct ScheduleInformation {
     let thread: Thread
     let departure: String
     let arrival: String

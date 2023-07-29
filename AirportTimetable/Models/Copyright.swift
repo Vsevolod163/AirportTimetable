@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Copyright {
+    let copyright: CopyrightInformation
+}
+
+struct CopyrightInformation {
+    let text: String
+    let url: String
+}
