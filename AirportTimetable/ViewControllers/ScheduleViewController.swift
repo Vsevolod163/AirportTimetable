@@ -41,14 +41,14 @@ final class ScheduleViewController: UIViewController {
         return label
     }()
     
-    var webUrl: String!
+    var webURL: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSubviews(departureTableView, copyrightView, infoLabel, urlLabel)
         setConstraints()
-        print(webUrl ?? "1")
+        print(webURL ?? "1")
     }
     
     private func setupSubviews(_ subviews: UIView...) {
