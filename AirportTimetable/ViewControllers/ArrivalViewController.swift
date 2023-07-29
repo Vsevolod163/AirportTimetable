@@ -8,7 +8,7 @@
 import UIKit
 
 final class ArrivalViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
