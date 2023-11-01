@@ -18,8 +18,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let departureVC = ScheduleViewController()
         let arrivalVC = ScheduleViewController()
         
-        departureVC.webURL = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=departure"
-        arrivalVC.webURL = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=arrival"
+        departureVC.webURL = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=departure&limit=1000"
+        arrivalVC.webURL = "https://api.rasp.yandex.net/v3.0/schedule/?apikey=12661f47-954a-427c-bbde-97de19cd1fb9&station=s9600213&transport_types=plane&event=arrival&limit=1000"
         
         let navigationDepartureVC = UINavigationController.init(rootViewController: departureVC)
         let navigationArrivalVC = UINavigationController.init(rootViewController: arrivalVC)
